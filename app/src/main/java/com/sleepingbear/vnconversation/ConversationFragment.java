@@ -68,6 +68,7 @@ public class ConversationFragment extends Fragment implements View.OnClickListen
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ( keyCode == KeyEvent.KEYCODE_ENTER ) {
+                    isRandom = false;
                     changeListView(true);
                 }
 
@@ -193,12 +194,14 @@ public class ConversationFragment extends Fragment implements View.OnClickListen
                     mSelect = arg1;
                 }
             });
+            /*
             dlg.setNeutralButton("TTS", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     myTTS.speak(foreign, TextToSpeech.QUEUE_FLUSH, null);
                 }
             });
+            */
             dlg.setNegativeButton("취소", null);
             dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override

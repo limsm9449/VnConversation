@@ -498,8 +498,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (id == R.id.action_share) {
             Intent msg = new Intent(Intent.ACTION_SEND);
             msg.addCategory(Intent.CATEGORY_DEFAULT);
-            msg.putExtra(Intent.EXTRA_SUBJECT, "최고의 영어회화 어플");
-            msg.putExtra(Intent.EXTRA_TEXT, "영어회화.. 참 어렵죠? 영어회화에 도움이 되는 '최고의 영어회화' 어플을 사용해 보세요. https://play.google.com/store/apps/details?id=com.sleepingbear.enconversation ");
+            msg.putExtra(Intent.EXTRA_SUBJECT, "최고의 베트남어 회화 어플");
+            msg.putExtra(Intent.EXTRA_TEXT, "베트남어 회화.. 참 어렵죠? 베트남어 회화에 도움이 되는 '최고의 베트남어 회화' 어플을 사용해 보세요. https://play.google.com/store/apps/details?id=com.sleepingbear.vnconversation ");
             msg.setType("text/plain");
             startActivity(Intent.createChooser(msg, "어플 공유"));
         }

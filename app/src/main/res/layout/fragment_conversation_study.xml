@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sleepingbear.enconversation.ConversationStudyFragment">
+    tools:context=".ConversationStudyFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -180,14 +180,14 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="5dp" />
 
-                    <com.sleepingbear.enconversation.FlowLayout
+                    <com.sleepingbear.vnconversation.FlowLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_toLeftOf="@+id/my_iv_right"
                         android:id="@+id/my_ll_conversation_word"
-                        android:layout_toRightOf="@+id/my_iv_left"></com.sleepingbear.enconversation.FlowLayout>
+                        android:layout_toRightOf="@+id/my_iv_left"></com.sleepingbear.vnconversation.FlowLayout>
 
                     <ImageView
                         android:layout_width="wrap_content"

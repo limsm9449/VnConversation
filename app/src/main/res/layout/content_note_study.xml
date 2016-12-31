@@ -123,7 +123,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="5dp" />
 
-                <com.sleepingbear.enconversation.FlowLayout
+                <com.sleepingbear.vnconversation.FlowLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
                     android:id="@+id/my_ll_conversation_word"
                     android:layout_toRightOf="@+id/my_iv_left"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"></com.sleepingbear.enconversation.FlowLayout>
+                    android:layout_marginRight="5dp"></com.sleepingbear.vnconversation.FlowLayout>
 
                 <ImageView
                     android:layout_width="wrap_content"
