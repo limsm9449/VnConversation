@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">최고의 베트남 회화</string>
+    <string name="app_name">최고의 베트남어 회화</string>
     <string name="action_delete">회화노트/단어장 삭제</string>
     <string name="action_email">Email</string>
     <string name="action_help">도움말</string>
