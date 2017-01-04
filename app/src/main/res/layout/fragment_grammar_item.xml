@@ -23,6 +23,7 @@
             android:textColor="@color/my_text_word"
             android:textSize="15dp"
             android:gravity="center_vertical"
+            android:textStyle="normal|bold"
             android:layout_alignParentBottom="false" />
 
         <TextView
