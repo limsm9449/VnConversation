@@ -64,7 +64,7 @@ public class HelpActivity extends AppCompatActivity {
         tempSb.append("* 회화 패턴 상세" + CommConstants.sqlCR);
         tempSb.append("- 회화 패턴이 들어간 회화를 조회합니다." + CommConstants.sqlCR);
         tempSb.append(" .회화를 클릭하면 영문을 볼 수 있습니다." + CommConstants.sqlCR);
-        tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가, TTS 기능을 사용 할 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가을 사용 할 수 있습니다." + CommConstants.sqlCR);
         tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 영어문장을 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append("" + CommConstants.sqlCR);
         if ( "PATTERN_ACT".equals(b.getString("SCREEN")) ) {
@@ -79,7 +79,7 @@ public class HelpActivity extends AppCompatActivity {
         tempSb.append(" .'A B'로 검색을 하면 A와 B가 들어간 회화를 검색합니다." + CommConstants.sqlCR);
         tempSb.append(" .'A B,C D'로 검색을 하면 A와 B가 들어간 회화와 C와 D가 들어간 회화를 검색합니다." + CommConstants.sqlCR);
         tempSb.append(" .회화를 클릭하면 영문을 볼 수 있습니다." + CommConstants.sqlCR);
-        tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가, TTS 기능을 사용 할 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가을 사용 할 수 있습니다." + CommConstants.sqlCR);
         tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 영어문장을 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append("" + CommConstants.sqlCR);
         if ( "CONVERSATION".equals(b.getString("SCREEN")) ) {
@@ -119,7 +119,7 @@ public class HelpActivity extends AppCompatActivity {
         tempSb.append("* 회화 노트 상세" + CommConstants.sqlCR);
         tempSb.append("- 회화 노트의 회화를 조회합니다." + CommConstants.sqlCR);
         tempSb.append(" .회화를 클릭하면 영문을 볼 수 있습니다." + CommConstants.sqlCR);
-        tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가, TTS 기능을 사용 할 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가을 사용 할 수 있습니다." + CommConstants.sqlCR);
         tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 영어문장을 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append(" .'MY 회화' 일때 회화 내용을 편집 할 수 있습니다." + CommConstants.sqlCR);
         tempSb.append("" + CommConstants.sqlCR);

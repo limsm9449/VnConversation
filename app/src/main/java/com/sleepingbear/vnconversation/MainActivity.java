@@ -384,6 +384,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Bundle bundle = new Bundle();
             if ( selectedTab == CommConstants.f_ConversationStudy ) {
                 bundle.putString("SCREEN", "CONVERSATION_STUDY");
+            } else if ( selectedTab == CommConstants.f_Grammar ) {
+                bundle.putString("SCREEN", "GRAMMAR");
             } else if ( selectedTab == CommConstants.f_Pattern ) {
                 bundle.putString("SCREEN", "PATTERN");
             } else if ( selectedTab == CommConstants.f_Note ) {
@@ -606,6 +608,9 @@ class MainPagerAdapter extends FragmentPagerAdapter {
 
         mFragmentList.add(new ConversationStudyFragment());
         mFragmentTitleList.add("회화 학습");
+
+        mFragmentList.add(new GrammarFragment());
+        mFragmentTitleList.add("기본 문법");
 
         mFragmentList.add(new PatternFragment());
         mFragmentTitleList.add("회화 패턴");

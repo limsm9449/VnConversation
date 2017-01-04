@@ -28,10 +28,11 @@ public class CommConstants {
     public final static int s_vocabulary = 2;
 
     public static int f_ConversationStudy = 0;
-    public static int f_Pattern = 1;
-    public static int f_Conversation = 2;
-    public static int f_Note = 3;
-    public static int f_Vocabulary = 4;
+    public static int f_Grammar = 1;
+    public static int f_Pattern = 2;
+    public static int f_Conversation = 3;
+    public static int f_Note = 4;
+    public static int f_Vocabulary = 5;
 
     //코드 등록
     public static String tag_code_ins = "C_CODE_INS" ;
