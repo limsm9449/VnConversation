@@ -74,7 +74,7 @@ public class SentenceViewActivity extends AppCompatActivity implements View.OnCl
 
         ImageButton mySample = (ImageButton) findViewById(R.id.my_c_sv_ib_mysample);
         mySample.setOnClickListener(this);
-        if ( DicDb.isExistInNote(db, sampleSeq) ) {
+        if ( !"".equals(sampleSeq) && DicDb.isExistInNote(db, sampleSeq) ) {
             isMySample = true;
             mySample.setImageResource(android.R.drawable.star_on);
         } else {

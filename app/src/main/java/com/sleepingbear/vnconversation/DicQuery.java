@@ -271,7 +271,7 @@ public class DicQuery {
 
         sql.append("SELECT SEQ _id, GRAMMAR, MEAN, DESCRIPTION, SAMPLES, ORD " + CommConstants.sqlCR);
         sql.append(" FROM DIC_GRAMMAR" + CommConstants.sqlCR);
-        sql.append("ORDER BY GRAMMAR" + CommConstants.sqlCR);
+        sql.append("ORDER BY ORD" + CommConstants.sqlCR);
 
         DicUtils.dicSqlLog(sql.toString());
 

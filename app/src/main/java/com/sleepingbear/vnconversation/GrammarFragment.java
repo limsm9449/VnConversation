@@ -19,13 +19,15 @@ import com.google.android.gms.ads.AdView;
 
 
 public class GrammarFragment extends Fragment {
-
     private DbHelper dbHelper;
     private SQLiteDatabase db;
     private View mainView;
     private GrammarFragCursorAdapter adapter;
 
     private Cursor cursor;
+
+    public GrammarFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,7 +51,7 @@ public class GrammarFragment extends Fragment {
         if ( isKeyin ) {
             cursor = db.rawQuery(DicQuery.getGrammar(), null);
 
-            ListView listView = (ListView) mainView.findViewById(R.id.my_lv);
+            ListView listView = (ListView) mainView.findViewById(R.id.my_f_grammar_lv);
             adapter = new GrammarFragCursorAdapter(getContext(), cursor);
             listView.setAdapter(adapter);
             listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
@@ -70,6 +72,8 @@ public class GrammarFragment extends Fragment {
             bundle.putString("description", cursor.getString(cursor.getColumnIndexOrThrow("DESCRIPTION")));
             bundle.putString("samples", cursor.getString(cursor.getColumnIndexOrThrow("SAMPLES")));
             intent.putExtras(bundle);
+
+            startActivity(intent);
         }
     };
 
@@ -79,8 +83,6 @@ class GrammarFragCursorAdapter extends CursorAdapter {
 
         public GrammarFragCursorAdapter(Context context, Cursor cursor) {
             super(context, cursor, 0);
-            mContext = context;
-            mCursor = cursor;
         }
 
         @Override

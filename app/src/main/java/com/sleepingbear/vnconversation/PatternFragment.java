@@ -28,8 +28,6 @@ public class PatternFragment extends Fragment {
 
     private Cursor cursor;
 
-    private Activity mActivity;
-
     public PatternFragment() {
     }
 
@@ -55,14 +53,9 @@ public class PatternFragment extends Fragment {
         if ( isKeyin ) {
             cursor = db.rawQuery(DicQuery.getPatternList(), null);
 
-            if ( cursor.getCount() == 0 ) {
-                Toast.makeText(getContext(), "검색된 데이타가 없습니다.", Toast.LENGTH_SHORT).show();
-            }
-
             ListView listView = (ListView) mainView.findViewById(R.id.my_f_convation_lv);
             adapter = new PatternFragCursorAdapter(getContext(), cursor, 0);
             listView.setAdapter(adapter);
-
             listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             listView.setOnItemClickListener(itemClickListener);
             listView.setOnItemLongClickListener(itemLongClickListener);
