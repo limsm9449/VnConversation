@@ -112,7 +112,7 @@ public class HelpActivity extends AppCompatActivity {
 
         tempSb.delete(0, tempSb.length());
         tempSb.append("* 카테고리" + CommConstants.sqlCR);
-        tempSb.append("- 카테고리로 단어를 조회합니다." + CommConstants.sqlCR);
+        tempSb.append("- 카테고리별로 단어를 조회합니다." + CommConstants.sqlCR);
         tempSb.append("" + CommConstants.sqlCR);
         if ( "CATEGORY".equals(b.getString("SCREEN")) ) {
             CurrentSb.append(tempSb.toString());

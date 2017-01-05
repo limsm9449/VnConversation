@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // ViewPaper 를 정의한다.
         mPager = (ViewPager) findViewById(R.id.main_pager);
 
-        mPager.setOffscreenPageLimit(5);
+        mPager.setOffscreenPageLimit(7);
 
         adapter = new MainPagerAdapter(getSupportFragmentManager(), this);
         mPager.setAdapter(adapter);
