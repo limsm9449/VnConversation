@@ -394,6 +394,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bundle.putString("SCREEN", "CONVERSATION");
             } else if ( selectedTab == CommConstants.f_Vocabulary ) {
                 bundle.putString("SCREEN", "VOCABULARY");
+            } else if ( selectedTab == CommConstants.f_Category ) {
+                bundle.putString("SCREEN", "CATEGORY");
             }
 
             Intent intent = new Intent(getApplication(), HelpActivity.class);
@@ -609,14 +611,17 @@ class MainPagerAdapter extends FragmentPagerAdapter {
         mFragmentList.add(new ConversationStudyFragment());
         mFragmentTitleList.add("회화 학습");
 
+        mFragmentList.add(new ConversationFragment());
+        mFragmentTitleList.add("회화 검색");
+
         mFragmentList.add(new GrammarFragment());
         mFragmentTitleList.add("기본 문법");
 
         mFragmentList.add(new PatternFragment());
         mFragmentTitleList.add("회화 패턴");
 
-        mFragmentList.add(new ConversationFragment());
-        mFragmentTitleList.add("회화 검색");
+        mFragmentList.add(new CategoryFragment());
+        mFragmentTitleList.add("카테고리");
 
         mFragmentList.add(new NoteFragment());
         mFragmentTitleList.add("회화 노트");

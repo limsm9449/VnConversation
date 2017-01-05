@@ -82,6 +82,10 @@ public class SentenceViewActivity extends AppCompatActivity implements View.OnCl
             mySample.setImageResource(android.R.drawable.star_off);
         }
 
+        if ( "".equals(sampleSeq) ) {
+            mySample.setVisibility(View.GONE);
+        }
+
         ImageButton ib_tts = (ImageButton) findViewById(R.id.my_c_sv_ib_tts);
         //ib_tts.setOnClickListener(this);
         ib_tts.setVisibility(View.GONE);

@@ -654,4 +654,15 @@ public class DicQuery {
         return sql.toString();
     }
 
+    public static String getCategory() {
+        StringBuffer sql = new StringBuffer();
+
+        sql.append("SELECT SEQ _id, CATEGORY, SAMPLES " + CommConstants.sqlCR);
+        sql.append(" FROM DIC_CATEGORY" + CommConstants.sqlCR);
+        sql.append("ORDER BY SEQ" + CommConstants.sqlCR);
+
+        DicUtils.dicSqlLog(sql.toString());
+
+        return sql.toString();
+    }
 }

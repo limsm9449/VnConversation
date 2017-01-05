@@ -49,6 +49,43 @@ public class HelpActivity extends AppCompatActivity {
         }
 
         tempSb.delete(0, tempSb.length());
+        tempSb.append("* 회화 검색" + CommConstants.sqlCR);
+        tempSb.append("- 검색어로 회화를 검색합니다." + CommConstants.sqlCR);
+        tempSb.append(" .'A B'로 검색을 하면 A와 B가 들어간 회화를 검색합니다." + CommConstants.sqlCR);
+        tempSb.append(" .'A B,C D'로 검색을 하면 A와 B가 들어간 회화와 C와 D가 들어간 회화를 검색합니다." + CommConstants.sqlCR);
+        tempSb.append(" .회화를 클릭하면 영문을 볼 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가을 사용 할 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 영어문장을 볼 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append("" + CommConstants.sqlCR);
+        if ( "CONVERSATION".equals(b.getString("SCREEN")) ) {
+            CurrentSb.append(tempSb.toString());
+        } else {
+            allSb.append(tempSb.toString());
+        }
+
+        tempSb.delete(0, tempSb.length());
+        tempSb.append("* 문장 상세" + CommConstants.sqlCR);
+        tempSb.append("- 문장의 발음 및 관련 단어를 조회하실 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .단어를 클릭하시면 단어 보기 및 등록할 단어장을 선택 하실 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .별표를 클릭하시면 Default 단어장에 추가 됩니다." + CommConstants.sqlCR);
+        tempSb.append("" + CommConstants.sqlCR);
+        if ( "SENTENCEVIEW".equals(b.getString("SCREEN")) ) {
+            CurrentSb.append(tempSb.toString());
+        } else {
+            allSb.append(tempSb.toString());
+        }
+
+        tempSb.delete(0, tempSb.length());
+        tempSb.append("* 기본 문법" + CommConstants.sqlCR);
+        tempSb.append("- 베트남어 기본 문법입니다." + CommConstants.sqlCR);
+        tempSb.append("" + CommConstants.sqlCR);
+        if ( "GRAMMAR".equals(b.getString("SCREEN")) ) {
+            CurrentSb.append(tempSb.toString());
+        } else {
+            allSb.append(tempSb.toString());
+        }
+
+        tempSb.delete(0, tempSb.length());
         tempSb.append("* 회화 패턴" + CommConstants.sqlCR);
         tempSb.append("- 회화 패턴별로 회화를 조회 및 회화 학습을 할 수 있습니다." + CommConstants.sqlCR);
         tempSb.append(" .패턴을 클릭하면 패턴이 들어간 회화를 조회 합니다. " + CommConstants.sqlCR);
@@ -74,27 +111,10 @@ public class HelpActivity extends AppCompatActivity {
         }
 
         tempSb.delete(0, tempSb.length());
-        tempSb.append("* 회화 검색" + CommConstants.sqlCR);
-        tempSb.append("- 검색어로 회화를 검색합니다." + CommConstants.sqlCR);
-        tempSb.append(" .'A B'로 검색을 하면 A와 B가 들어간 회화를 검색합니다." + CommConstants.sqlCR);
-        tempSb.append(" .'A B,C D'로 검색을 하면 A와 B가 들어간 회화와 C와 D가 들어간 회화를 검색합니다." + CommConstants.sqlCR);
-        tempSb.append(" .회화를 클릭하면 영문을 볼 수 있습니다." + CommConstants.sqlCR);
-        tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가을 사용 할 수 있습니다." + CommConstants.sqlCR);
-        tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 영어문장을 볼 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append("* 카테고리" + CommConstants.sqlCR);
+        tempSb.append("- 카테고리로 단어를 조회합니다." + CommConstants.sqlCR);
         tempSb.append("" + CommConstants.sqlCR);
-        if ( "CONVERSATION".equals(b.getString("SCREEN")) ) {
-            CurrentSb.append(tempSb.toString());
-        } else {
-            allSb.append(tempSb.toString());
-        }
-
-        tempSb.delete(0, tempSb.length());
-        tempSb.append("* 문장 상세" + CommConstants.sqlCR);
-        tempSb.append("- 문장의 발음 및 관련 단어를 조회하실 수 있습니다." + CommConstants.sqlCR);
-        tempSb.append(" .단어를 클릭하시면 단어 보기 및 등록할 단어장을 선택 하실 수 있습니다." + CommConstants.sqlCR);
-        tempSb.append(" .별표를 클릭하시면 Default 단어장에 추가 됩니다." + CommConstants.sqlCR);
-        tempSb.append("" + CommConstants.sqlCR);
-        if ( "SENTENCEVIEW".equals(b.getString("SCREEN")) ) {
+        if ( "CATEGORY".equals(b.getString("SCREEN")) ) {
             CurrentSb.append(tempSb.toString());
         } else {
             allSb.append(tempSb.toString());
