@@ -20,6 +20,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -43,8 +44,6 @@ public class ConversationStudyFragment extends Fragment implements View.OnClickL
     private String currSeq;
     private int difficult = 2;
     private boolean isStart = false;
-
-    private long adviewTime = 0;
 
     ConversationStudySearchTask task;
 
@@ -210,25 +209,40 @@ public class ConversationStudyFragment extends Fragment implements View.OnClickL
                     PublisherAdRequest.Builder publisherAdRequestBuilder = new PublisherAdRequest.Builder();
                     ((RelativeLayout) dialog_layout.findViewById(R.id.my_rl_admob)).addView(mPublisherAdView);
 
+                    mPublisherAdView.setAdListener(new AdListener() {
+                        @Override
+                        public void onAdLoaded() {
+                            super.onAdLoaded();
+
+                            ((Button) dialog_layout.findViewById(R.id.my_b_next)).setVisibility(View.VISIBLE);
+                            ((Button) dialog_layout.findViewById(R.id.my_b_close)).setVisibility(View.VISIBLE);
+                            ((Button) dialog_layout.findViewById(R.id.my_b_detail)).setVisibility(View.VISIBLE);
+                        }
+
+                        @Override
+                        public void onAdFailedToLoad(int i) {
+                            super.onAdFailedToLoad(i);
+
+                            ((Button) dialog_layout.findViewById(R.id.my_b_next)).setVisibility(View.VISIBLE);
+                            ((Button) dialog_layout.findViewById(R.id.my_b_close)).setVisibility(View.VISIBLE);
+                            ((Button) dialog_layout.findViewById(R.id.my_b_detail)).setVisibility(View.VISIBLE);
+                        }
+                    });
+
                     // Start loading the ad.
                     mPublisherAdView.loadAd(publisherAdRequestBuilder.build());
-                    adviewTime = System.currentTimeMillis();
 
                     ((Button) dialog_layout.findViewById(R.id.my_b_next)).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (System.currentTimeMillis() > adviewTime + 2000) {
-                                if (!cursor.isLast()) {
-                                    cursor.moveToNext();
-                                    conversationShow();
-                                } else {
-                                    changeListView(true);
-                                }
-
-                                alertDialog.dismiss();
+                            if (!cursor.isLast()) {
+                                cursor.moveToNext();
+                                conversationShow();
                             } else {
-                                Toast.makeText(getActivity(), "광고가 로딩된 후에 '다음 회화'가 가능합니다.", Toast.LENGTH_SHORT).show();
+                                changeListView(true);
                             }
+
+                            alertDialog.dismiss();
                         }
                     });
                     ((Button) dialog_layout.findViewById(R.id.my_b_close)).setOnClickListener(new View.OnClickListener() {
@@ -252,6 +266,10 @@ public class ConversationStudyFragment extends Fragment implements View.OnClickL
                             alertDialog.dismiss();
                         }
                     });
+
+                    ((Button) dialog_layout.findViewById(R.id.my_b_next)).setVisibility(View.GONE);
+                    ((Button) dialog_layout.findViewById(R.id.my_b_close)).setVisibility(View.GONE);
+                    ((Button) dialog_layout.findViewById(R.id.my_b_detail)).setVisibility(View.GONE);
 
                     alertDialog.setCanceledOnTouchOutside(false);
                     alertDialog.show();

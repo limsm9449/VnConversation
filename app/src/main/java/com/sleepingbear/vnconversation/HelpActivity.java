@@ -39,7 +39,7 @@ public class HelpActivity extends AppCompatActivity {
         tempSb.append("* 회화 학습" + CommConstants.sqlCR);
         tempSb.append("- Easy, Normal, hard 별로 회화 학습을 할 수 있습니다. " + CommConstants.sqlCR);
         tempSb.append(" .해석을 보고 단어를 클릭해서 올바른 문장을 만드세요." + CommConstants.sqlCR);
-        tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 영어문장을 볼 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 베트남어 문장을 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append(" .학습한 회화는 '회화 노트' Tab의 '학습 회화'에서 일자별로 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append("" + CommConstants.sqlCR);
         if ( "CONVERSATION_STUDY".equals(b.getString("SCREEN")) ) {
@@ -55,7 +55,7 @@ public class HelpActivity extends AppCompatActivity {
         tempSb.append(" .'A B,C D'로 검색을 하면 A와 B가 들어간 회화와 C와 D가 들어간 회화를 검색합니다." + CommConstants.sqlCR);
         tempSb.append(" .회화를 클릭하면 영문을 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가을 사용 할 수 있습니다." + CommConstants.sqlCR);
-        tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 영어문장을 볼 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 베트남어 문장을 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append("" + CommConstants.sqlCR);
         if ( "CONVERSATION".equals(b.getString("SCREEN")) ) {
             CurrentSb.append(tempSb.toString());
@@ -102,7 +102,7 @@ public class HelpActivity extends AppCompatActivity {
         tempSb.append("- 회화 패턴이 들어간 회화를 조회합니다." + CommConstants.sqlCR);
         tempSb.append(" .회화를 클릭하면 영문을 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가을 사용 할 수 있습니다." + CommConstants.sqlCR);
-        tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 영어문장을 볼 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 베트남어 문장을 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append("" + CommConstants.sqlCR);
         if ( "PATTERN_ACT".equals(b.getString("SCREEN")) ) {
             CurrentSb.append(tempSb.toString());
@@ -140,7 +140,7 @@ public class HelpActivity extends AppCompatActivity {
         tempSb.append("- 회화 노트의 회화를 조회합니다." + CommConstants.sqlCR);
         tempSb.append(" .회화를 클릭하면 영문을 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append(" .회화를 길게클릭하면 회화 학습, 문장 상세, 회화 노트에 추가을 사용 할 수 있습니다." + CommConstants.sqlCR);
-        tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 영어문장을 볼 수 있습니다." + CommConstants.sqlCR);
+        tempSb.append(" .오른쪽 상단 버튼의 눈 모양 버튼을 클릭하면 베트남어 문장을 볼 수 있습니다." + CommConstants.sqlCR);
         tempSb.append(" .'MY 회화' 일때 회화 내용을 편집 할 수 있습니다." + CommConstants.sqlCR);
         tempSb.append("" + CommConstants.sqlCR);
         if ( "NOTE_ACT".equals(b.getString("SCREEN")) ) {
