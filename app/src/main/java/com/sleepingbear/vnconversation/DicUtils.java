@@ -289,7 +289,7 @@ public class DicUtils {
 
             Cursor cursor = db.rawQuery(DicQuery.getWriteData(kind), null);
             while (cursor.moveToNext()) {
-                DicUtils.dicLog(cursor.getString(cursor.getColumnIndexOrThrow("WRITE_DATA")));
+                //DicUtils.dicLog(cursor.getString(cursor.getColumnIndexOrThrow("WRITE_DATA")));
                 fos.write((cursor.getString(cursor.getColumnIndexOrThrow("WRITE_DATA")).getBytes()));
                 fos.write("\n".getBytes());
             }
