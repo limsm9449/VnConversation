@@ -42,7 +42,7 @@ public class ConversationStudyFragment extends Fragment implements View.OnClickL
     private TextView my_tv_foreign;
     private String currForeign;
     private String currSeq;
-    private int difficult = 2;
+    private int difficult = 1;
     private boolean isStart = false;
 
     ConversationStudySearchTask task;

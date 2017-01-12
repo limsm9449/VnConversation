@@ -36,6 +36,7 @@ public class PatchActivity extends AppCompatActivity {
         patch.append("" + CommConstants.sqlCR);
         patch.append("- Android 4 - KitKat 버젼에서 실행이 안되는 문제점 수정" + CommConstants.sqlCR);
         patch.append("" + CommConstants.sqlCR);
+        patch.append("- 네이버 회화를 보고 돌아올 경우 리스트가 처음으로 가는 문제점 수정" + CommConstants.sqlCR);
         patch.append("" + CommConstants.sqlCR);
 
         ((TextView) this.findViewById(R.id.my_c_patch_tv1)).setText(patch.toString());
