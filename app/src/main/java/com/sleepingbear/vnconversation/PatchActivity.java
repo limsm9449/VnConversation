@@ -34,6 +34,7 @@ public class PatchActivity extends AppCompatActivity {
 
         patch.append("* 신규 패치" + CommConstants.sqlCR);
         patch.append("" + CommConstants.sqlCR);
+        patch.append("- Android 4 - KitKat 버젼에서 실행이 안되는 문제점 수정" + CommConstants.sqlCR);
         patch.append("" + CommConstants.sqlCR);
         patch.append("" + CommConstants.sqlCR);
 
