@@ -80,9 +80,12 @@ public class GrammarFragment extends Fragment {
 }
 
 class GrammarFragCursorAdapter extends CursorAdapter {
+    int fontSize = 0;
 
     public GrammarFragCursorAdapter(Context context, Cursor cursor) {
         super(context, cursor, 0);
+
+        fontSize = Integer.parseInt( DicUtils.getPreferencesValue( context, CommConstants.preferences_font ) );
     }
 
     @Override
@@ -96,5 +99,9 @@ class GrammarFragCursorAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         ((TextView) view.findViewById(R.id.my_tv_grammar)).setText(cursor.getString(cursor.getColumnIndexOrThrow("GRAMMAR")));
         ((TextView) view.findViewById(R.id.my_tv_mean)).setText(cursor.getString(cursor.getColumnIndexOrThrow("MEAN")));
+
+        //사이즈 설정
+        ((TextView) view.findViewById(R.id.my_tv_grammar)).setTextSize(fontSize);
+        ((TextView) view.findViewById(R.id.my_tv_mean)).setTextSize(fontSize);
     }
 }

@@ -315,6 +315,7 @@ class WordViewCursorAdapter extends CursorAdapter {
 
     private DbHelper dbHelper;
     private SQLiteDatabase db;
+    int fontSize = 0;
 
     public WordViewCursorAdapter(Context context, Cursor cursor, int flags, int ords[], String[] spellings) {
         super(context, cursor, 0);
@@ -324,6 +325,8 @@ class WordViewCursorAdapter extends CursorAdapter {
 
         rowOrds = ords;
         rowSpellings = spellings;
+
+        fontSize = Integer.parseInt( DicUtils.getPreferencesValue( context, CommConstants.preferences_font ) );
     }
 
     @Override
@@ -367,5 +370,11 @@ class WordViewCursorAdapter extends CursorAdapter {
             tv_foriegn.setText(rowOrds[cursor.getPosition() - 1] + ". " + data1);
             tv_han.setText("     " + data2);
         }
+
+        //사이즈 설정
+        tv_kind.setTextSize(fontSize);
+        tv_mean.setTextSize(fontSize);
+        tv_foriegn.setTextSize(fontSize);
+        tv_han.setTextSize(fontSize);
     }
 }
