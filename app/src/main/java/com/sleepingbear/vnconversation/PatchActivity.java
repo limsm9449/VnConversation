@@ -35,10 +35,12 @@ public class PatchActivity extends AppCompatActivity {
 
         patch.append("* 신규 패치" + CommConstants.sqlCR);
         patch.append("" + CommConstants.sqlCR);
+        patch.append("- 환경설정에서 글씨 크기를 변경할 수 있도록 변경" + CommConstants.sqlCR);
+        patch.append("- 회화 검색에서 성조없이 검색이 가능하도록 수정" + CommConstants.sqlCR);
+        patch.append("- 예문 데이가 추가" + CommConstants.sqlCR);
+        patch.append("" + CommConstants.sqlCR);
+        patch.append("" + CommConstants.sqlCR);
         patch.append("- Android 4 - KitKat 버젼에서 실행이 안되는 문제점 수정" + CommConstants.sqlCR);
-        patch.append("" + CommConstants.sqlCR);
-        patch.append("" + CommConstants.sqlCR);
-
         patch.append("- 네이버 회화를 보고 돌아올 경우 리스트가 처음으로 가는 문제점 수정" + CommConstants.sqlCR);
 
         ((TextView) this.findViewById(R.id.my_c_patch_tv1)).setText(patch.toString());
