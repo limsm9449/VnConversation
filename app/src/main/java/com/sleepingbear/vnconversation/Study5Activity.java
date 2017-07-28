@@ -130,6 +130,8 @@ public class Study5Activity extends AppCompatActivity implements View.OnClickLis
         }
 
         int fontSize = Integer.parseInt( DicUtils.getPreferencesValue( this, CommConstants.preferences_font ) );
+        tv_question.setTextSize(fontSize);
+        tv_spelling.setTextSize(fontSize);
         tv_answer1.setTextSize(fontSize);
         tv_answer2.setTextSize(fontSize);
         tv_answer3.setTextSize(fontSize);
