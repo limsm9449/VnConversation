@@ -141,6 +141,11 @@ public class WordViewActivity extends AppCompatActivity implements View.OnClickL
             TextView tv_mean = (TextView)this.findViewById(R.id.my_c_wv_tv_mean);
             tv_mean.setText(wordCursor.getString(wordCursor.getColumnIndexOrThrow("MEAN")));
 
+            int fontSize = Integer.parseInt( DicUtils.getPreferencesValue( getApplicationContext(), CommConstants.preferences_font ) );
+            ((TextView) findViewById(R.id.my_c_wv_tv_word)).setTextSize(fontSize);
+            ((TextView) findViewById(R.id.my_c_wv_tv_spelling)).setTextSize(fontSize);
+            ((TextView) findViewById(R.id.my_c_wv_tv_mean)).setTextSize(fontSize);
+
             if ( "0".equals(wordCursor.getString(wordCursor.getColumnIndexOrThrow("MY_VOC"))) ) {
                 ImageButton ib_myvoc = (ImageButton)this.findViewById(R.id.my_c_wv_ib_myvoc);
                 ib_myvoc.setImageResource(android.R.drawable.star_off);

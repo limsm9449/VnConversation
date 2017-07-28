@@ -396,7 +396,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch ( requestCode ) {
             case CommConstants.s_setting:
                 ((ConversationStudyFragment) adapter.getItem(CommConstants.f_ConversationStudy)).changeListView(true);
-                ((ConversationFragment) adapter.getItem(CommConstants.f_Conversation)).changeListView(true);
+                ((ConversationFragment) adapter.getItem(CommConstants.f_Conversation)).refreshListView();
                 ((GrammarFragment) adapter.getItem(CommConstants.f_Grammar)).changeListView(true);
                 ((PatternFragment) adapter.getItem(CommConstants.f_Pattern)).changeListView(true);
                 ((CategoryFragment) adapter.getItem(CommConstants.f_Category)).changeListView(true);
