@@ -79,9 +79,7 @@ public class ConversationStudyFragment extends Fragment implements View.OnClickL
         //리스트 내용 변경
         changeListView(true);
 
-        AdView av = (AdView)mainView.findViewById(R.id.adView);
-        AdRequest adRequest = new  AdRequest.Builder().build();
-        av.loadAd(adRequest);
+        DicUtils.setAdView(mainView);
 
         return mainView;
     }
@@ -211,36 +209,44 @@ public class ConversationStudyFragment extends Fragment implements View.OnClickL
                     ((TextView) dialog_layout.findViewById(R.id.my_tv_foreign)).setTextSize(fontSize);
 
                     // 광고 추가
-                    PublisherAdView mPublisherAdView = new PublisherAdView(getActivity());
-                    mPublisherAdView.setAdSizes(new AdSize(300, 250));
-                    mPublisherAdView.setAdUnitId(getResources().getString(R.string.banner_ad_unit_id2));
+                    if ( CommConstants.isFreeApp ) {
+                        PublisherAdView mPublisherAdView = new PublisherAdView(getActivity());
+                        mPublisherAdView.setAdSizes(new AdSize(300, 250));
+                        mPublisherAdView.setAdUnitId(getResources().getString(R.string.banner_ad_unit_id2));
 
-                    // Create an ad request.
-                    PublisherAdRequest.Builder publisherAdRequestBuilder = new PublisherAdRequest.Builder();
-                    ((RelativeLayout) dialog_layout.findViewById(R.id.my_rl_admob)).addView(mPublisherAdView);
+                        // Create an ad request.
+                        PublisherAdRequest.Builder publisherAdRequestBuilder = new PublisherAdRequest.Builder();
+                        ((RelativeLayout) dialog_layout.findViewById(R.id.my_rl_admob)).addView(mPublisherAdView);
 
-                    mPublisherAdView.setAdListener(new AdListener() {
-                        @Override
-                        public void onAdLoaded() {
-                            super.onAdLoaded();
+                        mPublisherAdView.setAdListener(new AdListener() {
+                            @Override
+                            public void onAdLoaded() {
+                                super.onAdLoaded();
 
-                            ((Button) dialog_layout.findViewById(R.id.my_b_next)).setVisibility(View.VISIBLE);
-                            ((Button) dialog_layout.findViewById(R.id.my_b_close)).setVisibility(View.VISIBLE);
-                            ((Button) dialog_layout.findViewById(R.id.my_b_detail)).setVisibility(View.VISIBLE);
-                        }
+                                ((Button) dialog_layout.findViewById(R.id.my_b_next)).setVisibility(View.VISIBLE);
+                                ((Button) dialog_layout.findViewById(R.id.my_b_close)).setVisibility(View.VISIBLE);
+                                ((Button) dialog_layout.findViewById(R.id.my_b_detail)).setVisibility(View.VISIBLE);
+                            }
 
-                        @Override
-                        public void onAdFailedToLoad(int i) {
-                            super.onAdFailedToLoad(i);
+                            @Override
+                            public void onAdFailedToLoad(int i) {
+                                super.onAdFailedToLoad(i);
 
-                            ((Button) dialog_layout.findViewById(R.id.my_b_next)).setVisibility(View.VISIBLE);
-                            ((Button) dialog_layout.findViewById(R.id.my_b_close)).setVisibility(View.VISIBLE);
-                            ((Button) dialog_layout.findViewById(R.id.my_b_detail)).setVisibility(View.VISIBLE);
-                        }
-                    });
+                                ((Button) dialog_layout.findViewById(R.id.my_b_next)).setVisibility(View.VISIBLE);
+                                ((Button) dialog_layout.findViewById(R.id.my_b_close)).setVisibility(View.VISIBLE);
+                                ((Button) dialog_layout.findViewById(R.id.my_b_detail)).setVisibility(View.VISIBLE);
+                            }
+                        });
 
-                    // Start loading the ad.
-                    mPublisherAdView.loadAd(publisherAdRequestBuilder.build());
+                        // Start loading the ad.
+                        mPublisherAdView.loadAd(publisherAdRequestBuilder.build());
+
+                        ((Button) dialog_layout.findViewById(R.id.my_b_next)).setVisibility(View.GONE);
+                        ((Button) dialog_layout.findViewById(R.id.my_b_close)).setVisibility(View.GONE);
+                        ((Button) dialog_layout.findViewById(R.id.my_b_detail)).setVisibility(View.GONE);
+                    } else {
+                        dialog_layout.findViewById(R.id.my_rl_admob).setVisibility(View.GONE);
+                    }
 
                     ((Button) dialog_layout.findViewById(R.id.my_b_next)).setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -276,10 +282,6 @@ public class ConversationStudyFragment extends Fragment implements View.OnClickL
                             alertDialog.dismiss();
                         }
                     });
-
-                    ((Button) dialog_layout.findViewById(R.id.my_b_next)).setVisibility(View.GONE);
-                    ((Button) dialog_layout.findViewById(R.id.my_b_close)).setVisibility(View.GONE);
-                    ((Button) dialog_layout.findViewById(R.id.my_b_detail)).setVisibility(View.GONE);
 
                     alertDialog.setCanceledOnTouchOutside(false);
                     alertDialog.show();

@@ -36,6 +36,7 @@
     <string name="title_activity_vocabulary">VocabularyActivity</string>
     <string name="title_activity_sentence_view">SentenceViewActivity</string>
     <string name="title_activity_study5">Study5Activity</string>
+    <string name="title_activity_study6">Study6Activity</string>
     <string name="title_activity_web_view">영어 사이트</string>
     <string name="title_activity_help">도움말</string>
     <string name="title_activity_patch">PatchActivity</string>

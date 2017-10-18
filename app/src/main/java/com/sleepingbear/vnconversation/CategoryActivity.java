@@ -64,6 +64,8 @@ public class CategoryActivity extends AppCompatActivity {
         ListView listView = (ListView) this.findViewById(R.id.my_c_category_lv);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(itemClickListener);
+
+        DicUtils.setAdView(this);
     }
 
     AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {

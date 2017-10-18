@@ -40,9 +40,7 @@ public class GrammarFragment extends Fragment {
 
         changeListView(true);
 
-        AdView av = (AdView)mainView.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        av.loadAd(adRequest);
+        DicUtils.setAdView(mainView);
 
         return mainView;
     }
@@ -103,5 +101,11 @@ class GrammarFragCursorAdapter extends CursorAdapter {
         //사이즈 설정
         ((TextView) view.findViewById(R.id.my_tv_grammar)).setTextSize(fontSize);
         ((TextView) view.findViewById(R.id.my_tv_mean)).setTextSize(fontSize);
+
+        if ( "".equals(DicUtils.getString(cursor.getString(cursor.getColumnIndexOrThrow("MEAN")))) ) {
+            ((TextView) view.findViewById(R.id.my_tv_mean)).setVisibility(View.GONE);
+        } else {
+            ((TextView) view.findViewById(R.id.my_tv_mean)).setVisibility(View.VISIBLE);
+        }
     }
 }

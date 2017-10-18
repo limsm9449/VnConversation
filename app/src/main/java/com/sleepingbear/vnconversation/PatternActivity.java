@@ -69,9 +69,7 @@ public class PatternActivity extends AppCompatActivity implements TextToSpeech.O
 
         getListView();
 
-        AdView av = (AdView)this.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        av.loadAd(adRequest);
+        DicUtils.setAdView(this);
     }
 
     public void getListView() {

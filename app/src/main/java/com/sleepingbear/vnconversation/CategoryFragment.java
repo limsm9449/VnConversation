@@ -40,9 +40,7 @@ public class CategoryFragment extends Fragment {
 
         changeListView(true);
 
-        AdView av = (AdView)mainView.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        av.loadAd(adRequest);
+        DicUtils.setAdView(mainView);
 
         return mainView;
     }

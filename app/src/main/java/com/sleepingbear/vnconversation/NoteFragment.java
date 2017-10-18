@@ -81,9 +81,7 @@ public class NoteFragment extends Fragment implements View.OnClickListener {
         //리스트 내용 변경
         changeListView();
 
-        AdView av = (AdView)mainView.findViewById(R.id.adView);
-        AdRequest adRequest = new  AdRequest.Builder().build();
-        av.loadAd(adRequest);
+        DicUtils.setAdView(mainView);
 
         return mainView;
     }
@@ -218,7 +216,7 @@ public class NoteFragment extends Fragment implements View.OnClickListener {
                         Toast.makeText(getContext(), "기본 회화노트는 삭제할 수 없습니다.", Toast.LENGTH_SHORT).show();
                         alertDialog.dismiss();
                     } else {
-                        new android.app.AlertDialog.Builder(getActivity())
+                        new android.support.v7.app.AlertDialog.Builder(getActivity())
                                 .setTitle("알림")
                                 .setMessage("삭제된 데이타는 복구할 수 없습니다. 삭제하시겠습니까?")
                                 .setPositiveButton("확인", new DialogInterface.OnClickListener() {
