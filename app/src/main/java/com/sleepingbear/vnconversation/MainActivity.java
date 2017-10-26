@@ -404,6 +404,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ((VocabularyFragment) adapter.getItem(CommConstants.f_Vocabulary)).changeListView();
 
                 break;
+            case CommConstants.s_vocabulary:
+                ((VocabularyFragment) adapter.getItem(CommConstants.f_Vocabulary)).changeListView();
         }
     }
 
